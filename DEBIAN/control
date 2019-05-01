@@ -1,0 +1,9 @@
+Package: com.morgrimm.morglyphs
+Name: Morglyphs
+Version: 0.1
+Architecture: iphoneos-arm
+Description: Additional glyph icons!
+Author: Morgrimm
+Maintainer: Morgrimm
+Section: Themes
+
