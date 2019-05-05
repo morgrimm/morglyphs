@@ -38,7 +38,7 @@ jobs:
       - *git_install
       - *git_checkout
       - *git_configure_user
-      - run: git submodule update --remote --merge ${PKGPATH  }
+      - run: git submodule update --remote --merge ${PKGPATH}
       - run:
           name: Update package
           command: |
