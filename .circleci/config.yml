@@ -55,4 +55,4 @@ workflows:
             branches:
               only: master
             tags:
-              only: /[.|\d]+/
+              only: /^v\d+\.\d+\.\d+$/
