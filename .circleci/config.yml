@@ -24,7 +24,6 @@ git_checkout: &git_checkout
     command: |
       git clone https://${GITHUB_PERSONAL_TOKEN}@github.com/morgrimm/${REPO}.git .
       git submodule sync
-      git submodule update --init
       git checkout ${CIRCLE_BRANCH}
 
 version: 2.1
