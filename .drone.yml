@@ -1,0 +1,40 @@
+---
+kind: pipeline
+name: update 
+
+steps:
+  - name: update_repository
+    image: debian:latest
+    environment:
+      TOKEN:
+        from_secret: github_token
+    commands:
+    - apt-get update
+    - apt-get install -y git
+
+    - mkdir -p /drone/ci
+    - cd /drone/ci
+    
+    - git clone https://$TOKEN@github.com/morgrimm/repo.git .
+    - git submodule sync
+    - git submodule update --init
+
+    - git config credential.helper 'cache --timeout=120'
+    - git config user.name 'Drone'
+    - git config user.email 'drone'
+
+    - git submodule update --remote --merge pkgs/com.morgrimm.morglyphs
+    - git add -A
+    - git commit -m "chore: Update morglyphs to ${DRONE_TAG}"
+    - git push -q https://$TOKEN@github.com/morgrimm/repo.git master
+    when:
+      branch:
+      - master
+trigger:
+  event:
+  - ta:
+---
+kind: signature
+hmac: f39be7dbf386c9e0231fc25b16e9d23912ee9659c57a280f40dcaddb5ac7aa5c
+
+...
