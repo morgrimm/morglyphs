@@ -25,11 +25,10 @@ steps:
 
     - git submodule update --remote --merge pkgs/com.morgrimm.morglyphs
     - git add -A
-    - git commit -m "chore: Update morglyphs to ${DRONE_TAG}"
+    - 'git commit -m "chore: Update morglyphs to ${DRONE_TAG}"'
     - git push -q https://$TOKEN@github.com/morgrimm/repo.git master
     when:
-      branch:
-      - master
+      branch: master
 trigger:
   event:
   - tag
