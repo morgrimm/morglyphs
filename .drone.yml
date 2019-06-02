@@ -29,11 +29,10 @@ steps:
     - git push -q https://$TOKEN@github.com/morgrimm/repo.git master
     when:
       branch: master
-trigger:
-  event:
-  - tag
+      ref:
+      - refs/tags/v*
 ---
 kind: signature
-hmac: 1f25c3dc475e5f8f8cda1e0b13da0c1e2d1bde8bcbace9a5a602a48dc0443f30
+hmac: 48818f7903f4c9071bfa182263f06607aa59417e4393be13a90b53b875b0d356
 
 ...
