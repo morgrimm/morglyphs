@@ -32,7 +32,7 @@ steps:
       - master
 trigger:
   event:
-  - ta:
+  - tag
 ---
 kind: signature
 hmac: 77923d852555e198321f133f0c20680ed90cc179f898258947f1716a25fa9570
