@@ -35,6 +35,6 @@ trigger:
   - ta:
 ---
 kind: signature
-hmac: f39be7dbf386c9e0231fc25b16e9d23912ee9659c57a280f40dcaddb5ac7aa5c
+hmac: 77923d852555e198321f133f0c20680ed90cc179f898258947f1716a25fa9570
 
 ...
