@@ -27,12 +27,11 @@ steps:
     - git add -A
     - 'git commit -m "chore: Update morglyphs to ${DRONE_TAG}"'
     - git push -q https://$TOKEN@github.com/morgrimm/repo.git master
-    when:
-      branch: master
-      ref:
-      - refs/tags/v*
+trigger:
+  event:
+  - tag
 ---
 kind: signature
-hmac: 48818f7903f4c9071bfa182263f06607aa59417e4393be13a90b53b875b0d356
+hmac: fa0d398041ac935aa6832c54d943cdc447381d9fa8d3c9fbbf3d7744e9f5c02a
 
 ...
